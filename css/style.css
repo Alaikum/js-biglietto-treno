@@ -1,17 +1,49 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
     overflow: hidden;
     background-color: dimgray;
 }
-.container{
+
+.container {
     width: 500px;
-    margin: 25% auto;
+    margin: 25% auto 1rem;
     border: 3px solid darkmagenta;
-    
+
+}
+
+.rail {
+    width: 500px;
+    margin: 0 auto;
+    font-size: 2rem;
+    position: relative;
+    animation: play 3s linear infinite;
+}
+
+@keyframes play {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 74%;
+    }
+
+}
+
+.train {
+    color: indianred;
+    position: absolute;
+    right: 15rem;
+    top: 50%;
+
+
+
+
+
 }
