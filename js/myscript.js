@@ -12,21 +12,36 @@
 
 
 // chilometri da percorrere
-const km= parseInt(prompt("Scrivi i chilometri che devi percorrere, perfavore"));
-
+const km = parseInt(prompt("Scrivi i chilometri che devi percorrere, perfavore"));
+const distanza = document.getElementById("distanza");
+distanza.innerHTML = km;
 // età passeggero 
-const eta= parseInt(prompt("Mi potresti dire quanti anni hai?"));
+const eta = parseInt(prompt("Mi potresti dire quanti anni hai?"));
+const anni = document.getElementById("anni");
+anni.innerHTML = eta;
 
-const prezzoIntero= km * 0.21
+
+const prezzoIntero = km * 0.21
 
 var prezzoScontato
 
-if(eta<18){
+if (eta < 18) {
     prezzoScontato = prezzoIntero * (1 - 0.2)
-    prezzoScontato= prezzoScontato.toFixed(2);
-    console.log(prezzoScontato)
+    prezzoScontato = prezzoScontato.toFixed(2);
+    // console.log(prezzoScontato)
+    const prezzo = document.getElementById("prezzo");
+    prezzo.innerHTML = prezzoScontato;
+} else if (eta >= 65) {
+    prezzoScontato = prezzoIntero * (1 - 0.4)
+    prezzoScontato = prezzoScontato.toFixed(2);
+    // console.log(prezzoScontato)
+    const prezzo = document.getElementById("prezzo");
+    prezzo.innerHTML = prezzoScontato;
+} else{
+    const prezzo = document.getElementById("prezzo");
+    prezzo.innerHTML = prezzoIntero;
 }
 
 // controllo variabili
-console.log(km,eta,prezzoIntero)
+console.log(km, eta, prezzoIntero)
 
