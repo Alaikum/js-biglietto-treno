@@ -25,19 +25,33 @@ const prezzoIntero = km * 0.21
 
 var prezzoScontato
 
+if ((isNaN(km) || km<= 0) && (isNaN(eta) || eta<= 0)) {
+
+    const errore = document.getElementById("errore");
+    errore.innerHTML = 'HAI INSERITO UN VALORE IN KM ED IN ANNI NON VALIDO,RIPROVA PER FAVORE';
 
 
+}
 
-if (eta < 18) {
+else if (isNaN(km) || km <= 0) {
+    const errore = document.getElementById("errore");
+    errore.innerHTML = 'HAI INSERITO UN VALORE IN KM NON VALIDO,RIPROVA PER FAVORE';
+
+}
+else if (isNaN(eta) || eta <= 0) {
+    const errore = document.getElementById("errore");
+    errore.innerHTML = 'HAI INSERITO UN VALORE IN ANNI NON VALIDO,RIPROVA PER FAVORE';
+}
+else if (eta < 18) {
     prezzoScontato = prezzoIntero * (1 - 0.2)
     prezzoScontato = prezzoScontato.toFixed(2);
     // console.log(prezzoScontato)
     const prezzo = document.getElementById("prezzo");
     prezzo.innerHTML = prezzoScontato;
-    if (eta == 1) {
-       const annoUno= document.getElementById('anno__uno');
-       annoUno.innerHTML='o'
-        
+    if (eta === 1) {
+        const annoUno = document.getElementById('anno__uno');
+        annoUno.innerHTML = 'o'
+
     }
 
 } else if (eta >= 65) {
