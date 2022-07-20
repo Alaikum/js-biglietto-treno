@@ -25,19 +25,28 @@ const prezzoIntero = km * 0.21
 
 var prezzoScontato
 
+
+
+
 if (eta < 18) {
     prezzoScontato = prezzoIntero * (1 - 0.2)
     prezzoScontato = prezzoScontato.toFixed(2);
     // console.log(prezzoScontato)
     const prezzo = document.getElementById("prezzo");
     prezzo.innerHTML = prezzoScontato;
+    if (eta == 1) {
+       const annoUno= document.getElementById('anno__uno');
+       annoUno.innerHTML='o'
+        
+    }
+
 } else if (eta >= 65) {
     prezzoScontato = prezzoIntero * (1 - 0.4)
     prezzoScontato = prezzoScontato.toFixed(2);
     // console.log(prezzoScontato)
     const prezzo = document.getElementById("prezzo");
     prezzo.innerHTML = prezzoScontato;
-} else{
+} else {
     const prezzo = document.getElementById("prezzo");
     prezzo.innerHTML = prezzoIntero;
 }
